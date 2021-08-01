@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{AEB0D2AA-CBAB-450F-BBE8-43208FBE0108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{013F8E74-FB93-428A-82DE-D7676596A0FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{4240EEBC-F8EF-4FD2-9D02-2C1D747DE195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEB0D2AA-CBAB-450F-BBE8-43208FBE0108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB0D2AA-CBAB-450F-BBE8-43208FBE0108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB0D2AA-CBAB-450F-BBE8-43208FBE0108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB0D2AA-CBAB-450F-BBE8-43208FBE0108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013F8E74-FB93-428A-82DE-D7676596A0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013F8E74-FB93-428A-82DE-D7676596A0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013F8E74-FB93-428A-82DE-D7676596A0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013F8E74-FB93-428A-82DE-D7676596A0FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4240EEBC-F8EF-4FD2-9D02-2C1D747DE195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4240EEBC-F8EF-4FD2-9D02-2C1D747DE195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4240EEBC-F8EF-4FD2-9D02-2C1D747DE195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4240EEBC-F8EF-4FD2-9D02-2C1D747DE195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9A7139F-F64C-4B0C-9B13-BC4D4FB24461}
+	EndGlobalSection
+EndGlobal
