@@ -1,3 +1,5 @@
+using BusinessLogic.Logic;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +27,7 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddTransient<IProductoRepository, ProductoRepository>();
             services.AddControllers();
         }
 
