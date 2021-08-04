@@ -27,7 +27,7 @@ namespace WebApi
                 {
                     var context = services.GetRequiredService<MarketDbContext>();
                     await context.Database.MigrateAsync();
-                    await MarketDbContextData.cargarDataAsync(context, loggerFactory);
+                    await MarketDbContextData.CargarDataAsync(context, loggerFactory);
                 }
                 catch (Exception e)
                 {

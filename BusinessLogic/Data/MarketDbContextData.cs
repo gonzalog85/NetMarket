@@ -12,7 +12,7 @@ namespace BusinessLogic.Data
 {
     public class MarketDbContextData
     {
-        public static async Task cargarDataAsync(MarketDbContext context, ILoggerFactory loggerFactory)
+        public static async Task CargarDataAsync(MarketDbContext context, ILoggerFactory loggerFactory)
         {
             try
             {
