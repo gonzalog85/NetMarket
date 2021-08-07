@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApi.DTOs;
+using WebApi.Middleware;
 
 namespace WebApi
 {
@@ -38,21 +39,25 @@ namespace WebApi
             services.AddTransient<IProductoRepository, ProductoRepository>();
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NetMarket", Version = "v1" });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "NetMarket", Version = "v1" });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NetMarket v1"));
-            }
+            //if (env.isdevelopment())
+            //{
+            //    //app.usedeveloperexceptionpage();
+            //    app.useswagger();
+            //    app.useswaggerui(c => c.swaggerendpoint("/swagger/v1/swagger.json", "netmarket v1"));
+            //}
+
+            app.UseMiddleware<ExceptionMiddleware>();
+
+            app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");
 
             app.UseRouting();
 
