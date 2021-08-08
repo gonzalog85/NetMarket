@@ -25,11 +25,29 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ProductoDTO>>> GetProductos(string sort, int? marca, int? categoria)
+        public async Task<ActionResult<Pagination<ProductoDTO>>> GetProductos([FromQuery] ProductoSpecificationParams productoParams)
         {
-            var spec = new ProductoWithCategoriaAndMarcaSpecification(sort, marca, categoria);
+            var spec = new ProductoWithCategoriaAndMarcaSpecification(productoParams);
             var productos = await productoRepository.GetAllWithSpec(spec);
-            return Ok(mapper.Map<IReadOnlyList<Producto>, IReadOnlyList<ProductoDTO>>(productos));
+
+            var specCount = new ProductoForCountingSpecification(productoParams);
+            var totalProductos = await productoRepository.CountAsync(specCount);
+
+            var rounded = Math.Ceiling(Convert.ToDecimal(totalProductos / productoParams.PageSize));
+            var totalPages = Convert.ToInt32(rounded);
+
+            var data = mapper.Map<IReadOnlyList<Producto>, IReadOnlyList<ProductoDTO>>(productos);
+
+            var respuesta = new Pagination<ProductoDTO>
+            {
+                Count = totalProductos,
+                PageIndex = productoParams.PageIndex,
+                PageSize = productoParams.PageSize,
+                PageCount = totalPages,
+                Data = data
+            };
+
+            return Ok(respuesta);
         }
 
         [HttpGet("{id:int}")]
@@ -37,7 +55,7 @@ namespace WebApi.Controllers
         {
             var spec = new ProductoWithCategoriaAndMarcaSpecification(id);
             var producto = await productoRepository.GetByIdWithSpec(spec);
-            if(producto == null)
+            if (producto == null)
             {
                 return NotFound(new CodeErrorResponse(404, "No se encontro el producto"));
             }

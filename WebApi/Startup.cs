@@ -39,6 +39,14 @@ namespace WebApi
             services.AddTransient<IProductoRepository, ProductoRepository>();
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsRule", rule =>
+                {
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
+                });
+            });
+
             //services.AddSwaggerGen(c =>
             //{
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "NetMarket", Version = "v1" });
@@ -60,6 +68,8 @@ namespace WebApi
             app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");
 
             app.UseRouting();
+
+            app.UseCors("CorsRule");
 
             app.UseAuthorization();
 
