@@ -1,0 +1,41 @@
+[33mcommit 379ea702060e02ab362676da1d1e7d9062046cb8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Sat Aug 7 20:00:57 2021 -0300
+
+    Manejo de errores, errores personalizados
+
+[33mcommit 50eb42f588ae6792451e579270f331e769817d18[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Thu Aug 5 22:12:51 2021 -0300
+
+    Creacion de componente generico e implementacion en controller producto, Expression Generic, Evaluacion de Specification e implementacion en controller producto, Configuracion automapper, DTO producto
+
+[33mcommit 1adc537fd40f476f1acd2098c2f11c570d03a431[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Tue Aug 3 21:34:16 2021 -0300
+
+    Implementacion swagger
+
+[33mcommit 28f3281890b61b8568a4b35c34fb95f03b06457d[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Tue Aug 3 20:54:27 2021 -0300
+
+    Configuracion MarketDbContext, MarketDbContextData, impl ProductoRepository, ProductoController, Migracion inicial
+
+[33mcommit fb3c3e4c37ff821f605eb8be971266c0106fc93d[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Sun Aug 1 21:44:05 2021 -0300
+
+    Creacion de la entidad Producto, creacion de la interfaz Producto e implementacion del Repository
+
+[33mcommit 26bf11d8719a79b8083ca30b6630dfb97556acf8[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Sun Aug 1 19:10:26 2021 -0300
+
+    Agregar archivos de proyecto.
+
+[33mcommit 125ee5898b4fa718b076e1874ec4cabcf7f637d4[m
+Author: Gonzalo <gonzalogomez22@gmail.com>
+Date:   Sun Aug 1 19:10:23 2021 -0300
+
+    Agregar .gitignore y .gitattributes.
