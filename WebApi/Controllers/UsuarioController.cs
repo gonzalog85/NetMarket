@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,11 +15,13 @@ namespace WebApi.Controllers
     {
         private readonly UserManager<Usuario> userManager;
         private readonly SignInManager<Usuario> signInManager;
+        private readonly ITokenService tokenService;
 
-        public UsuarioController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager)
+        public UsuarioController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, ITokenService tokenService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.tokenService = tokenService;
         }
 
         [HttpPost("login")]
@@ -42,7 +45,7 @@ namespace WebApi.Controllers
             {
                 Email = usuario.Email,
                 Username = usuario.UserName,
-                Token = "Este es el token del usuario",
+                Token = tokenService.CreateToken(usuario),
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido
             };
@@ -70,7 +73,7 @@ namespace WebApi.Controllers
             {
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido,
-                Token = "Este es el Token del usuario",
+                Token = tokenService.CreateToken(usuario),
                 Email = usuario.Email,
                 Username = usuario.UserName
             };
