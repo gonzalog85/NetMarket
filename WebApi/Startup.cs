@@ -51,7 +51,8 @@ namespace WebApi
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:Key"])),
                     ValidIssuer = Configuration["Token:Issuer"],
-                    ValidateIssuer = true
+                    ValidateIssuer = true,
+                    ValidateAudience = false
                 };
             });
 
